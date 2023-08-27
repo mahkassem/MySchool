@@ -3,7 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\User;
+use Barryvdh\LaravelIdeHelper\Eloquent;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +17,32 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        // delete all admins
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+        DB::query('TRUNCATE TABLE admins');
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::factory()->admin()->create([
+            'name' => 'Admin User',
+            'email' => 'admin@example.com',
+            'password' => Hash::make('secret'),
+        ]);
+
+
+        if (app()->isLocal()) {
+            // development seeder
+            $this->call([
+                BuildingSeeder::class,
+                StudentSeeder::class,
+                TeacherSeeder::class,
+            ]);
+        }
+
+        if (app()->isProduction()) {
+            // production seeder
+
+        }
+
+
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
     }
 }

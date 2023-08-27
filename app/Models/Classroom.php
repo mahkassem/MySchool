@@ -19,16 +19,4 @@ class Classroom extends Model
     {
         return $this->belongsTo(Building::class);
     }
-
-    // Classroom many-to-many relationship with Student
-    public function students()
-    {
-        return $this->belongsToMany(Student::class);
-    }
-
-    // Classroom many-to-many relationship with Teacher
-    public function teachers()
-    {
-        return $this->belongsToMany(Teacher::class);
-    }
 }

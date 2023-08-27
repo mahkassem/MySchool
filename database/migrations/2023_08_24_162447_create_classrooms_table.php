@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('classrooms', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('building_id'); // Foreign key
-            $table->string('name', 50);
+            $table->string('name', 50)->unique();
             $table->timestamps();
 
             // Relationships

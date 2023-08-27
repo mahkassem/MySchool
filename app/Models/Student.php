@@ -21,9 +21,9 @@ class Student extends Model
         return $this->belongsTo(User::class);
     }
 
-    // Student many-to-many relationship with Classroom
-    public function classrooms()
+    // Student many-to-many relationship with Course
+    public function courses()
     {
-        return $this->belongsToMany(Classroom::class);
+        return $this->belongsToMany(Course::class);
     }
 }

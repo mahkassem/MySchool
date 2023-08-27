@@ -11,23 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('classroom_students', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('classroom_id'); // Foreign key
-            $table->unsignedBigInteger('student_id'); // Foreign key
-
-            // composite primary key
-            $table->primary(['classroom_id', 'student_id']);
+            $table->unsignedBigInteger('teacher_id'); // Foreign key
+            $table->string('name', 50)->unique();
+            $table->string('duration', 50);
+            $table->timestamps();
 
             // Relationships
             $table->foreign('classroom_id')
                 ->references('id')
                 ->on('classrooms')
-                ->onDelete('cascade'); // If classroom is deleted, delete classroom_student
+                ->onDelete('restrict'); // If classroom is deleted, prevent deletion
 
-            $table->foreign('student_id')
+            $table->foreign('teacher_id')
                 ->references('id')
-                ->on('students')
-                ->onDelete('cascade'); // If student is deleted, delete classroom_student
+                ->on('teachers')
+                ->onDelete('restrict'); // If teacher is deleted, prevent deletion
         });
     }
 
@@ -36,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('classroom_students');
+        Schema::dropIfExists('courses');
     }
 };

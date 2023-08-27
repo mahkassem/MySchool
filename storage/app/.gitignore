@@ -1,3 +1,5 @@
 *
 !public/
+!seeding_data/
+!seeding_data/*
 !.gitignore
