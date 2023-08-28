@@ -5,7 +5,6 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\User;
-use Barryvdh\LaravelIdeHelper\Eloquent;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -17,9 +16,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // set foreign key check to 0
+        DB::statement("SET FOREIGN_KEY_CHECKS = 0");
+
         // delete all admins
-        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-        DB::query('TRUNCATE TABLE admins');
+        User::truncate();
 
         User::factory()->admin()->create([
             'name' => 'Admin User',
@@ -41,8 +42,6 @@ class DatabaseSeeder extends Seeder
             // production seeder
 
         }
-
-
-        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+        DB::statement("SET FOREIGN_KEY_CHECKS = 1");
     }
 }

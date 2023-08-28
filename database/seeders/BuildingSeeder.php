@@ -17,7 +17,7 @@ class BuildingSeeder extends Seeder
     public function run(): void
     {
         // truncate all buildings cascade
-        DB::query('TRUNCATE TABLE buildings');
+        Building::truncate();
 
         $dataSource = Storage::get('seeding_data/buildings.json');
 

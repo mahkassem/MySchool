@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Student;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class StudentSeeder extends Seeder
 {
@@ -15,7 +14,7 @@ class StudentSeeder extends Seeder
     public function run(): void
     {
         // truncate all students cascade
-        DB::query('TRUNCATE TABLE students');
+        Student::truncate();
 
         // create 200 students
         Student::factory()->count(200)->create();
