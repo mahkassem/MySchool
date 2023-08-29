@@ -1,0 +1,332 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "MySchool",
+    "dateExported": "2023-08-29T18:57:09.697Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "240aa105-23be-4da2-aa72-dc3d268a86c2",
+            "name": "Building API",
+            "containerId": "",
+            "created": "2023-08-24T17:15:13.077Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "acaae57c-be5f-4fea-a9e3-f6fe3b80285e",
+            "name": "Classroom API",
+            "containerId": "",
+            "created": "2023-08-29T16:42:34.903Z",
+            "sortNum": 15000
+        },
+        {
+            "_id": "ad84b11d-3d0d-43ab-86a9-270ac6d41edd",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2023-08-24T18:10:22.615Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "6ab331eb-887e-43f5-8541-cbf0e387c8d8",
+            "name": "Course API",
+            "containerId": "",
+            "created": "2023-08-29T17:38:50.313Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "9d46ef7e-7ebc-4717-aede-d1105d6b6935",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "240aa105-23be-4da2-aa72-dc3d268a86c2",
+            "name": "Create Building",
+            "url": "buildings",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-08-24T17:15:21.015Z",
+            "modified": "2023-08-24T18:12:11.338Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bb2423ea-ea9b-4bc8-bd53-f6f8f13c3021",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "acaae57c-be5f-4fea-a9e3-f6fe3b80285e",
+            "name": "Create Classroom",
+            "url": "classrooms",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-08-29T16:42:34.903Z",
+            "modified": "2023-08-29T16:50:07.428Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Math Class\",\n  \"building_id\": 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5f4eec1b-7812-4b96-9b43-abafb1a84ea3",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "240aa105-23be-4da2-aa72-dc3d268a86c2",
+            "name": "Update Building",
+            "url": "buildings",
+            "method": "PUT",
+            "sortNum": 15000,
+            "created": "2023-08-24T17:50:39.035Z",
+            "modified": "2023-08-24T18:11:59.165Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 2,\n  \"name\": \"3\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3e118871-c365-410a-93d9-e37b51e56fb3",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "acaae57c-be5f-4fea-a9e3-f6fe3b80285e",
+            "name": "Update Classroom",
+            "url": "classrooms",
+            "method": "PUT",
+            "sortNum": 15000,
+            "created": "2023-08-29T16:42:34.904Z",
+            "modified": "2023-08-29T16:44:23.738Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 1,\n  \"name\": \"Mathematics Class\",\n  \"building_id\": 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3f7de287-91ce-48ef-af47-7fa35bebe49a",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "240aa105-23be-4da2-aa72-dc3d268a86c2",
+            "name": "All Buildings",
+            "url": "buildings",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-08-24T17:50:19.874Z",
+            "modified": "2023-08-24T18:11:12.278Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "721184f7-6f2f-48a1-97db-30131ffc0f93",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "acaae57c-be5f-4fea-a9e3-f6fe3b80285e",
+            "name": "All Classrooms",
+            "url": "classrooms",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-08-29T16:42:34.905Z",
+            "modified": "2023-08-29T16:43:05.225Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e1bbf1bc-858f-4edb-abe3-c67b3522c8ce",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "acaae57c-be5f-4fea-a9e3-f6fe3b80285e",
+            "name": "Classroom By Id",
+            "url": "classrooms/1",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2023-08-29T16:50:52.293Z",
+            "modified": "2023-08-29T16:51:11.487Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e61ddcfb-0fc3-4be0-967d-f8fd08b16991",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "240aa105-23be-4da2-aa72-dc3d268a86c2",
+            "name": "Delete Building",
+            "url": "buildings/1",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-08-24T17:56:30.133Z",
+            "modified": "2023-08-24T18:12:20.735Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8ab4e804-468f-425b-85ed-856cf4fd0d91",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "ad84b11d-3d0d-43ab-86a9-270ac6d41edd",
+            "name": "Register User",
+            "url": "auth/register",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-08-24T18:10:29.386Z",
+            "modified": "2023-08-29T18:43:34.560Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"first_name\": \"Jane\",\n  \"last_name\": \"Dow\",\n  \"email\": \"jane.dow1@example.com\",\n  \"password\": \"secret123\",\n  \"account_type\": \"teacher\",\n  \"subject\": \"Math\",\n  \"major\": \"Math\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "405e4f29-c584-48bf-b0c7-c3f7c72b771c",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "acaae57c-be5f-4fea-a9e3-f6fe3b80285e",
+            "name": "Delete Classroom",
+            "url": "classrooms/1",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-08-29T16:42:34.906Z",
+            "modified": "2023-08-29T16:43:08.097Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4651fd65-b0eb-46fe-b82b-eb1bce15a209",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "ad84b11d-3d0d-43ab-86a9-270ac6d41edd",
+            "name": "Login",
+            "url": "auth/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-08-24T18:19:27.645Z",
+            "modified": "2023-08-29T16:46:40.402Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"secret\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3a435086-c300-49bf-8431-62f4dbabc9ab",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "6ab331eb-887e-43f5-8541-cbf0e387c8d8",
+            "name": "Create Course",
+            "url": "courses",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-08-29T17:39:05.019Z",
+            "modified": "2023-08-29T17:46:24.229Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"English Grammer Level 3\",\n  \"classroom_id\": 1,\n  \"teacher_id\": 3,\n  \"duration\": \"6 Weeks\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bbf1ecaf-ce48-45c9-b140-49b3b063efe7",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "6ab331eb-887e-43f5-8541-cbf0e387c8d8",
+            "name": "All Courses",
+            "url": "courses?per_page=2&page=2",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-08-29T17:46:38.487Z",
+            "modified": "2023-08-29T18:55:36.890Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "per_page",
+                    "value": "2",
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isPath": false
+                },
+                {
+                    "name": "search",
+                    "value": "Physics",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "duration",
+                    "value": "2 weeks",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "teacher",
+                    "value": "Ward",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "0125031e-0be3-4f61-8f72-ce5b3e18954e",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "6ab331eb-887e-43f5-8541-cbf0e387c8d8",
+            "name": "Course By Id",
+            "url": "courses/1",
+            "method": "GET",
+            "sortNum": 65000,
+            "created": "2023-08-29T18:19:51.054Z",
+            "modified": "2023-08-29T18:20:29.926Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6b541a88-996e-4663-80a2-e9c7c29b06dc",
+            "colId": "d4709636-de66-474b-aca6-6903c1fe6ebd",
+            "containerId": "6ab331eb-887e-43f5-8541-cbf0e387c8d8",
+            "name": "Add Student",
+            "url": "courses/add-student",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-08-29T18:18:58.415Z",
+            "modified": "2023-08-29T18:19:45.434Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"course_id\": 1,\n  \"student_id\": 10\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "headers": [
+            {
+                "name": "X-Requested-with",
+                "value": "XMLHttpRequest"
+            }
+        ],
+        "auth": {
+            "type": "bearer",
+            "bearer": "2|laravel_sanctum_4iaPLYZ1sEtIGJxhbtLx6tzbbz9HxGWyDfI5lFure49c5241"
+        },
+        "options": {
+            "baseUrl": "http://localhost:8000/api/"
+        }
+    }
+}

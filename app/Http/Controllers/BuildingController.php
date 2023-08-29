@@ -9,6 +9,11 @@ use App\Models\Building;
 
 class BuildingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth:sanctum', 'admin'])->except(['index']);
+    }
+
     public function index()
     {
         $buildings = Building::all();

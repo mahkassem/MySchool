@@ -28,7 +28,6 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('secret'),
         ]);
 
-
         if (app()->isLocal()) {
             // development seeder
             $this->call([
@@ -42,6 +41,7 @@ class DatabaseSeeder extends Seeder
             // production seeder
 
         }
+
         DB::statement("SET FOREIGN_KEY_CHECKS = 1");
     }
 }

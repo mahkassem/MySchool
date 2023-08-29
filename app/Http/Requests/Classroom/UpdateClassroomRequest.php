@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Building;
+namespace App\Http\Requests\Classroom;
 
-use App\Models\Building;
+use App\Models\Classroom;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateBuildingRequest extends FormRequest
+class UpdateClassroomRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,22 +23,24 @@ class UpdateBuildingRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id' => 'required|integer|exists:buildings,id',
-            'name' => 'required|string|max:50|unique:buildings,name,' . $this->id,
+            'id' => 'required|exists:classrooms',
+            'name' => 'required|string|max:50|unique:classrooms,name,' . $this->id,
+            'building_id' => 'required|exists:buildings,id',
         ];
     }
 
     /**
-     * Update building.
+     * Update classroom.
      */
-    public function updateBuilding(): Building
+    public function updateClassroom(): Classroom
     {
-        $building = Building::find($this->id);
+        $classroom = Classroom::find($this->id);
 
-        $building->update([
+        $classroom->update([
             'name' => $this->name,
+            'building_id' => $this->building_id,
         ]);
 
-        return $building;
+        return $classroom;
     }
 }

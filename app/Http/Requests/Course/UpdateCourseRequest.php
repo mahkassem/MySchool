@@ -23,8 +23,8 @@ class UpdateCourseRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'duration' => 'required|integer',
+            'name' => 'required|string|max:50',
+            'duration' => 'required|string|max:50',
             'teacher_id' => 'required|integer|exists:teachers,id',
             'classroom_id' => 'required|integer|exists:classrooms,id'
         ];

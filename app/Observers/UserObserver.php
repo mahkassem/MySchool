@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Jobs\SendWelcomeEmailJob;
 use App\Models\User;
+use App\Notifications\SendWelcomeNotification;
 use Illuminate\Support\Facades\Log;
 
 class UserObserver
@@ -15,6 +16,9 @@ class UserObserver
     {
         Log::info('User created: ' . $user->name);
         SendWelcomeEmailJob::dispatch($user)->delay(now()->addSeconds(5));
+
+        // Send welcome email using notification
+        $user->notify(new SendWelcomeNotification());
     }
 
     /**
